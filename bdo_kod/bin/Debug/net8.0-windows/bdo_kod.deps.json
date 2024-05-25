@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "bdo_kod/1.0.0": {
+        "runtime": {
+          "bdo_kod.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "bdo_kod/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
