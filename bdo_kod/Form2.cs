@@ -48,10 +48,13 @@ namespace bdo_kod
             // Güncel stok dosyasını oku
             foreach (var line in File.ReadLines(guncelStokFilePath))
             {
+                // Satırı virgülle ayırarak parçalara böl
                 var parts = line.Split(',');
                 if (parts.Length == 2)
                 {
+                    // İlk parça ilaç adı, ikinci parça stok miktarıdır
                     string ilacAdiDosya = parts[0].Trim();
+                    // stok miktarını günceller
                     if (ilacAdiDosya == ilacAdi)
                     {
                         int mevcutStok;

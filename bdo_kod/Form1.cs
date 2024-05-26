@@ -11,13 +11,13 @@ namespace bdo_kod
         {
 
         }
-
+        // Ýlaç Kaydý buttonu
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
             f2.Show();
         }
-
+        // Yetkili giriþ buttonu
         private void button2_Click(object sender, EventArgs e)
         {
             Form3 f3 = new Form3();

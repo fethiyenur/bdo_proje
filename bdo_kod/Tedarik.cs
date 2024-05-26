@@ -16,7 +16,7 @@ namespace bdo_kod
             public int GuncelStok { get; set; }
             public int MinimumStok { get; set; }
         }
-
+        // ilaçların isimlerini ve 22 günde gerekli minimum stok sayılarını tutan dictionary
         private readonly Dictionary<string, int> ilacMinimumStok = new Dictionary<string, int>
         {
             { "AMİNOFİLİN ENJ.", 10000 },
@@ -38,12 +38,13 @@ namespace bdo_kod
             { "NİTROGLİSERİN TAB./SPREY", 10000 }
             
         };
-
+        // gerekli dosyaların adları fonksiyonda kullanılmak üzere oluşturulur
         private string inputFilePath;
         private string acilStokFilePath;
         private string tedarikFilePath;
 
-        public IlacTedarik(string inputFilePath, string acilStokFilePath, string tedarikFilePath)
+        // constructor
+       public IlacTedarik(string inputFilePath, string acilStokFilePath, string tedarikFilePath)
         {
             this.inputFilePath = inputFilePath;
             this.acilStokFilePath = acilStokFilePath;
@@ -76,12 +77,14 @@ namespace bdo_kod
 
             // İlacları karşılaştır ve listelere ekle
             foreach (var ilac in ilaclar)
-            {
+            {    // Minimum stok ile güncel stok arasındaki farkı hesapla
                 int fark = ilac.MinimumStok - ilac.GuncelStok;
+                // Tedarik edilecek ilaçlar listesindeki ilaç sayısı
                 if (ilac.GuncelStok < ilac.MinimumStok)
                 {
                     acilStokList.Add($"{ilac.Ad}, {fark + 100}");
                 }
+                // Tedarik bekleyen ilaçlar listesindeki ilaç sayısı
                 else if (ilac.GuncelStok == ilac.MinimumStok)
                 {
                     tedarikList.Add($"{ilac.Ad}, {fark + 100}");
